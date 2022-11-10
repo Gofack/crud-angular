@@ -1,0 +1,20 @@
+<header class="header">
+	<div class="container">
+		<ng-container *ngIf="route == '/'">
+			<h1 class="header__title"> Todo list </h1>
+			<div class="buttons-group">
+				<a routerLink="/addTodo" class="btn btn-primary">Add todo</a>
+				<button class="btn btn-secondary" (click)="clearList()">Clear list</button>
+			</div>
+		</ng-container>
+		<ng-container *ngIf="route == '/addTodo'">
+			<h1 class="header__title"> Add todo </h1>
+			<a routerLink="/" class="header__back-link"></a>
+		</ng-container>
+		<ng-container *ngIf="route == '/editTodo'">
+			<h1 class="header__title">Edit todo </h1>
+			<a routerLink="/" class="header__back-link"></a>
+		</ng-container>
+	</div>
+</header>
+<!-- .header -->
