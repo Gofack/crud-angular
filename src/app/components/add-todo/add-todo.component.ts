@@ -8,8 +8,7 @@ import { TodoService } from 'src/app/services/todo/todo.service';
 	styleUrls: ['./add-todo.component.scss']
 })
 export class AddTodoComponent implements OnInit {
-	todoAdded = false;
-	todoExist = false;
+	message = '';
 	text: string = '';
 	addTodoForm = new FormGroup({
 		textarea: new FormControl('', Validators.minLength(5)),
@@ -23,13 +22,15 @@ export class AddTodoComponent implements OnInit {
 
 	addTodo() {
 		this.text = this.addTodoForm.value.textarea;
-		if (this.todoService.addTodo(this.text)) {
-			this.todoAdded = !this.todoAdded;
-			this.todoExist = false;
+		if (this.text === '') {
+			this.message = `Please, type some text for adding todo.`
 		} else {
-			this.todoExist = !this.todoExist;
-			this.todoAdded = false;
+			if (this.todoService.addTodo(this.text)) {
+				this.message = `Todo "${this.text}" successfully added!`;
+			} else {
+				this.message = `Todo "${this.text}" already exist!`;
+			}
+			this.addTodoForm.reset();
 		}
-		this.addTodoForm.reset();
 	}
 }

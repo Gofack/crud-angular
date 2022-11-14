@@ -11,7 +11,7 @@
 			<h1 class="header__title"> Add todo </h1>
 			<a routerLink="/" class="header__back-link"></a>
 		</ng-container>
-		<ng-container *ngIf="route == '/editTodo'">
+		<ng-container *ngIf="route.includes('/editTodo/') ">
 			<h1 class="header__title">Edit todo </h1>
 			<a routerLink="/" class="header__back-link"></a>
 		</ng-container>

@@ -17,28 +17,38 @@
 		margin-left: auto;
 	}
 	&__back-link {
-		display: inline-block;
-		margin-left: auto;
+		position: relative;
 		display: block;
-		width: 2rem;
-		height: 2rem;
-		border-top: 0.2rem solid;
-		border-left: 0.2rem solid;
-		transform: rotate(-45deg);
+		width: 3rem;
+		height: 3rem;
+		margin-left: auto;
 		color: $black;
 		transition: $transition;
 		&:hover {
-			transform: translateX(-0.5rem) rotate(-45deg);
+			transform: translateX(-0.5rem);
 		}
+		&::after,
 		&::before {
 			content: "";
 			display: block;
-			width: 0.2rem;
-			height: 3.9rem;
-			background-color: currentColor;
-			transform: rotate(-45deg) translate(1.3rem, 0.4rem);
-			left: 0;
-			top: 0;
+			box-sizing: border-box;
+			position: absolute;
+		}
+		&::after {
+			width: 1.5rem;
+			height: 1.5rem;
+			border-bottom: 0.2rem solid;
+			border-left: 0.2rem solid;
+			transform: rotate(45deg);
+			bottom: 0.7rem;
+			left: 0.3rem;
+		}
+		&::before {
+			width: 100%;
+			height: 0.2rem;
+			bottom: 1.3rem;
+			background: currentColor;
+			left: 0.2rem;
 		}
 	}
 }

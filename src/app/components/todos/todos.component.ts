@@ -14,7 +14,6 @@ export class TodosComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.todos = this.todoService.getTodos();
-		console.log(this.todos);
 	}
 
 	clearList(arr: []) {
@@ -29,5 +28,9 @@ export class TodosComponent implements OnInit {
 		}
 
 		this.todoService.removeTodo(text);
+	}
+
+	editTodo(text: string) {
+
 	}
 }

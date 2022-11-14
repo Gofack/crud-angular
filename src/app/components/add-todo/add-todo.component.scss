@@ -1,21 +1,5 @@
 @import "../../../styles.scss";
 
-.form {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	textarea {
-		height: 10rem;
-		resize: none;
-		margin-bottom: 1rem;
-		width: 100%;
-		padding: 1rem;
-		border-radius: 0;
-		font-family: "Roboto", sans-serif;
-		font-size: 1.6rem;
-		line-height: 1.2;
-	}
-}
 .message-holder {
 	text-align: center;
 	span {

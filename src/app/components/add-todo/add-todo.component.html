@@ -5,11 +5,8 @@
 		<button type="submit" class="btn btn-primary">Add todo</button>
 	</form>
 	<div class="message-holder">
-		<ng-container *ngIf="todoAdded">
-			<h4>Todo <span>"{{this.text}}"</span> successfully added!</h4>
-		</ng-container>
-		<ng-container *ngIf="todoExist">
-			<h4>Todo <span>"{{this.text}}"</span> <strong> already exist!</strong></h4>
+		<ng-container *ngIf="message">
+			<h4>{{message}}</h4>
 		</ng-container>
 	</div>
 </div>

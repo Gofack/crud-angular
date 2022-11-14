@@ -37,17 +37,27 @@ export class TodoService extends Init {
 		let todos = JSON.parse(localStorage.getItem('todos') || '{}');
 		let match = [];
 		for (let i = 0; i < todos.length; i++) {
-			if (todos[i].text === text) {
+			if (text === '') return false;
+			if (todos[i].text.trim() === text.trim()) {
 				match.push(todos[i].text);
 			}
 		}
 		if (match.length === 0) {
-			console.log(text);
 			todos.push({ text: text });
 			localStorage.setItem('todos', JSON.stringify(todos));
 			return true;
 		} else {
 			return false
 		}
+	}
+
+	updateTodo(oldTodo: string, newTodo: string) {
+		let todos = JSON.parse(localStorage.getItem('todos') || '{}');
+		for (let i = 0; i < todos.length; i++) {
+			if (todos[i].text.trim() === oldTodo.trim()) {
+				todos[i].text = newTodo;
+			}
+		}
+		localStorage.setItem('todos', JSON.stringify(todos));
 	}
 }

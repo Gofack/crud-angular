@@ -1,1 +1,13 @@
-<p>edit-todo works!</p>
+<app-header></app-header>
+<div class="container">
+	<form [formGroup]="editTodoForm" (ngSubmit)="editTodo()" class="form">
+		<textarea clas="form-control" formControlName="textarea"></textarea>
+		<button type="submit" class="btn btn-primary">Save</button>
+	</form>
+	<!-- <div class="message-holder">
+		<ng-container *ngIf="message">
+			<h4>{{message}}</h4>
+		</ng-container>
+	</div> -->
+</div>
+<!-- /.container -->
