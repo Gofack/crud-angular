@@ -29,8 +29,4 @@ export class TodosComponent implements OnInit {
 
 		this.todoService.removeTodo(text);
 	}
-
-	editTodo(text: string) {
-
-	}
 }

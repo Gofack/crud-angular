@@ -11,7 +11,6 @@ import { Todo } from 'src/app/interfaces/todo';
 })
 export class EditTodoComponent implements OnInit {
 	todos: Todo[] = [];
-	message = '';
 	text: string = '';
 	route = this.router.url;
 	todoId = this.route[this.route.length - 1];

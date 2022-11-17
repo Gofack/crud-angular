@@ -1,18 +1,15 @@
 <app-header (clearEvent)="clearList($event)"></app-header>
 <div class="container">
 	<ul class="todo-list">
-		<!-- <ng-container *ngIf="todos"> -->
 		<li *ngFor="let todo of todos; let i = index" class="todo-list__item">
 			<span class="todo-list__item-text">
 				{{todo.text}}
 			</span>
 			<div class="buttons-group">
-				<!-- <button class="btn btn-primary" (click)="editTodo(todo.text)">Edit</button> -->
 				<a routerLink="/editTodo/{{i}}" class="btn btn-primary">Edit</a>
 				<button class="btn btn-secondary" (click)="removeTodo(todo.text)">Remove</button>
 			</div>
 		</li>
-		<!-- </ng-container> -->
 	</ul>
 </div>
 <!-- /.container -->

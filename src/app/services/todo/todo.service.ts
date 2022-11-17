@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Init } from 'src/app/init-todos';
-import { Todo } from 'src/app/interfaces/todo';
 
 @Injectable({
 	providedIn: 'root'
@@ -19,7 +18,6 @@ export class TodoService extends Init {
 
 	clearTodos() {
 		let todos: [] = [];
-		// localStorage.setItem('todos', '');
 		localStorage.setItem('todos', JSON.stringify(todos));
 	}
 
